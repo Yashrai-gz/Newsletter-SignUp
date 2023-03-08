@@ -2,6 +2,8 @@ const express= require("express");
 const request= require("request");
 const bodyParser = require("body-parser");
 const https=require("https");
+const {auth} =require("./demo")
+
 
 const app= express();
 
@@ -38,7 +40,7 @@ app.post("/", (req, res)=>{
     
     const options={
         method: "POST",
-        auth:"Mingo:fc8733a8d855d46928ca4ae50114319c-us14"
+        auth:auth
     };
 
 
@@ -75,7 +77,4 @@ app.listen(process.env.PORT || 3000, ()=>{
 
 
 
-// API KEY : fc8733a8d855d46928ca4ae50114319c-us14 
 
-//List ID : 2d0b165be1
-//my data center: us14 you can find it in  the last of your API KEY 
